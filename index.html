@@ -13,13 +13,24 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '273902270341926');
 fbq('track', 'PageView');
+  
+  fbq('track', ‘ViewContent’);
+  
+  function SpotifyClick() {
+  //Grab those link clickers!
+  window._fbq.push('track', ‘ViewContent’);
+    
 </script>
+  
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=273902270341926&ev=PageView&noscript=1"
 /></noscript>
-<!-- End Facebook Pixel Code -->
+
+  
+  <!-- End Facebook Pixel Code -->
   
 </head>
 
-HELLO 
+<a href ="http://www.google.com"onclick=“SpotifyClick();” target = “_blank”>CLICK HERE</a>
+  
 </html>
