@@ -15,21 +15,16 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '273902270341926');
 fbq('track', 'PageView');
     
-     function wait() {
-    // check for the generic script
-    // easiest check to prevent race condition
-    if (fbq.version > '2.0') {
-      // now check for the custom script
-      // `fbq.on` is now ready (`fbq.once` would be better but has a bug)
-     fbq.on('configLoaded', function (name) {
-        if (name === 273902270341926) {
-          myCallback();
-        }
-      });
-    } else {
-      setTimeout(wait, 10);
-    }
-  })();
+    (function wait() {
+    //first check if the fbq object is defined, then check the version (probably not needed but for good measure
+
+    if ((typeof fbq !== 'undefined') && (fbq.version > '2.9')) {
+        //fire off the call back / tracking event
+        myCallBack(); //fbq('track', 'Lead');       
+    } 
+else 
+  setTimeout(wait, 10);
+})();
     
 </script>
   
