@@ -15,12 +15,30 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '273902270341926');
 fbq('track', 'PageView');
 </script>
-
+  
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=273902270341926&ev=PageView&noscript=1"
 /></noscript>
 
   <!-- End Facebook Pixel Code -->
+  
+  
+  (function wait() {
+    // check for the generic script
+    // easiest check to prevent race condition
+    if (fbq.version > '2.0') {
+      // now check for the custom script
+      // `fbq.on` is now ready (`fbq.once` would be better but has a bug)
+     fbq.on('configLoaded', function (name) {
+        if (name === myId) {
+          myCallback();
+        }
+      });
+    } else {
+      setTimeout(wait, 10);
+    }
+  })();
+  
   
   <meta http-equiv="refresh" content="3; url='https://open.spotify.com/track/10dCLovVzXVFq6inuTqgKV?si=x5g-ZADBTW62aLkhidoXUw'" />
   
