@@ -14,18 +14,7 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '273902270341926');
 fbq('track', 'PageView');
-    
-    (function wait() {
-    //first check if the fbq object is defined, then check the version (probably not needed but for good measure
-
-    if ((typeof fbq !== 'undefined') && (fbq.version > '2.9')) {
-        //fire off the call back / tracking event
-        myCallBack(); //fbq('track', 'Lead');       
-    } 
-else 
-  setTimeout(wait, 10);
-})();
-    
+     
 </script>
   
 <noscript><img height="1" width="1" style="display:none"
